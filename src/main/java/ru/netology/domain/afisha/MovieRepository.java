@@ -34,9 +34,9 @@ public class MovieRepository {
     }
 
     //возвращает объект по идентификатору (либо null, если такого объекта нет)
-    public MovieData findById(int Id) {
+    public MovieData findById(int id) {
         for (MovieData movie : movies) {
-            if (movie.getId() == Id) {
+            if (movie.getId() == id) {
                 return movie;
             }
         }
@@ -44,10 +44,10 @@ public class MovieRepository {
     }
 
     //удаляет объект по идентификатору (если объекта нет, то пусть будет исключение, как на лекции)
-    public void removeById(int Id) {
+    public void removeById(int id) {
         MovieData[] tmp = new MovieData[movies.length - 1];
         for (int i = 0, j = 0; i < tmp.length - 1; i++, j++) {
-            if (movies[j].getId() == Id) {
+            if (movies[j].getId() == id) {
                 j++;
             }
             tmp[i] = movies[j];
